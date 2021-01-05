@@ -1,0 +1,425 @@
+body {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+table.mainTable {
+    border: 1px solid rgba(0, 0, 0, 0.78);
+    width: 100%;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: normal;
+
+}
+
+.mainTable tbody tr {
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+.mainTable thead th{
+    background-color: rgba(58, 58, 58, 0.21);
+    font-weight: bolder;
+    font-size: medium;
+}
+
+.mainTable tbody tr:nth-child(odd){
+    background-color: rgba(246, 199, 50, 0.1);
+}
+
+.mainTable tbody tr:nth-child(even){
+    background-color: rgba(132, 0, 230, 0.07);
+}
+
+.mainTable tbody td {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.mainTable tbody td:last-child {
+    text-align: center;
+}
+
+.mainTable tbody td:nth-last-child(2) {
+    border-right-style: solid;
+    border-color: rgba(63,68,64,0.33);
+    margin-right: 3px;
+}
+
+h1 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+table.popUpTable {
+    background-color: initial !important;
+    border-collapse: collapse;
+}
+
+.popUpTable tbody {
+    background-color: white !important;
+    font-size: 15px;
+    white-space: nowrap;
+    border-collapse: collapse;
+}
+.popUpTable tbody tr:first-child{
+    text-align: left;
+
+}
+.popUpTable tbody tr td:first-child{
+    text-align: left;
+    font-weight: normal;
+
+}
+
+
+.popUpTable tbody tr:nth-child(even) {
+    background-color: rgb(246, 247, 252)
+
+}
+
+.popUpTable tbody tr:nth-child(odd) {
+    background-color: rgb(237, 234, 239)
+}
+.popUpTable tbody tr:nth-child(even):hover {
+    background-color: inherit;
+}
+
+.popUpTable tbody tr:nth-child(odd):hover {
+    background-color: inherit;
+}
+
+.upper-container {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.upper-container, .lower-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+}
+
+.main-content-box {
+    min-width: 500px;
+    background-color: #fdfdfd;
+    border-radius: 5px;
+    border-width: 1px ;
+    border-color: #310032;
+    border-style: solid;
+    margin: 5px;
+    box-sizing: border-box;
+    padding-top: 10px;
+
+}
+
+.inner-content-box {
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+
+.content-separator {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, #ffffff 0%, #310032 3%,#310032 97%,#ffffff 100%);
+    margin-bottom: 10px;
+}
+
+.isAccessible {
+    background-color: rgb(253, 255, 253);
+    border-style: solid;
+    border-width: 2px;
+    border-color: #08c000;
+    position: relative;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 1px 1px 2px 0px #000000b8;
+    border-radius: 2px;
+
+
+}
+
+.isAccessible:hover {
+    background: linear-gradient(to right, rgba(8, 151, 0, 0.64) 0%,#f0ffef 30%,#ffffff 53%,#f0ffef 74%,#08cd00 100%);
+    box-shadow: 0px 0px 2px 0px #000000b8;
+    transition: background-color 0.08s linear;
+
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.isNeedToScan {
+    background: linear-gradient(to right, #e5a0a0 0%,#ffe8e8 24%,#ffffff 50%,#ffeaea 79%,#e59797 100%);
+    border-color: #e62525;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+}
+
+.isReadyToCheck {
+    background-color: #f7fdff;
+    border-radius: 2px;
+    border-color: #008cbb;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.isStandby {
+    background-color: #a5cdc6;
+}
+
+.isCantCheck {
+    background-color: rgba(195, 196, 198, 0.98);
+    border-radius: 2px;
+    border-color: #6c6d6f;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.overThirteenCount {
+    background-color: #ff0009 !important;
+}
+
+.search-mode-notification {
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    background: #450046;
+    border-radius: 3px;
+    padding: 4px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #333333;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.popUp {
+    position: absolute;
+    background-color: #fdfdfd;
+    border-color: #430045;
+    border-width: thin;
+    border-style: solid;
+    right: 100%;
+    top: -150%;
+    padding: 5px;
+    z-index: 999;
+    font-size: 1.2em;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.29)
+
+}
+
+.search-result-summary {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.search-result-summary-content {
+    margin-right: auto;
+    margin-left: auto;
+    border: #450346;
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.mainTable tbody tr:hover {
+    background-color: rgba(35, 34, 32, 0.33);
+
+}
+.mainTable tbody td:nth-last-child(2):active {
+    background-color: #49eeff;
+}
+
+
+
+
+
+.loadPulse {
+    border-color: rgba(49, 0, 50, 0.59);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.42);
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-size: 14px;
+    background: linear-gradient(270deg, rgba(67, 0, 69, 0.1), rgba(250, 205, 57, 0.14), rgba(67, 0, 69, 0.1));
+    background-size: 600% 600%;
+    -webkit-animation: searchLoad 1s ease infinite;
+    -moz-animation: searchLoad 1s ease infinite;
+    animation: searchLoad 1s ease infinite;
+}
+
+
+
+
+@-webkit-keyframes searchLoad {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes searchLoad {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes searchLoad {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+@keyframes pulse {
+    0% {
+        opacity: 20%;
+        background: linear-gradient(to right, #facd39 0%,#430045 52%,#facd39 100%);
+    }
+
+    50% {
+        opacity: 80%;
+        background: linear-gradient(to right, #430045 0%,#facd39 50%,#430045 100%);
+    }
+    100% {
+        opacity: 20%;
+        background: linear-gradient(to right, #facd39 0%,#430045 52%,#facd39 100%);
+    }
+}
+
+.no-results {
+    text-align: center;
+    color: #310032;
+}
+
+.isbn-warning {
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.text-input-form {
+    display: flex;
+}
+.text-input {
+    border-radius: 5px 0 0 5px;
+    height: 1.5em;
+    padding: 2px 5px;
+    font-weight: lighter;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.isbn-counter {
+    background-color: #d0d0d0;
+    font-weight: bold;
+    padding-right: 3px;
+    color: #310032;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.counter-container {
+    display: flex;
+    padding-left: 5px;
+    background-color: #d0d0d0;
+    border-radius: 0 5px 5px 0;
+    height: 1.5em;
+    padding: 2px 5px;
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.search-bar-label {
+    margin-right: 5px;
+}
+
+.text-search-label {
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+
+}
+
+.semester-display {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 0.9em;
+    }
+    table.mainTable {
+        font-size: 0.9em;
+    }
+    .upper-container {
+        display: block;
+    }
+
+    .search-mode-notification {
+        margin-top: 10px;
+        margin-left: 0px;
+
+    }
+    .search-bar {
+        margin-bottom: 10px;
+    }
+
+
+}
+@media only screen and (min-width: 768px) and (max-width: 802px) {
+    body {
+        font-size: 0.9em;
+    }
+    table.mainTable{
+        font-size: 0.9em;
+    }
+    .upper-container {
+        display: block;
+    }
+
+    .search-mode-notification {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .search-bar {
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    body {
+        font-size: 0.9em;
+    }
+    table.mainTable{
+        font-size: 0.9em;
+    }
+
+}
+@media only screen  and (min-width: 1200px) {
+    body {
+        font-size: 1em;
+    }
+    table.mainTable{
+        font-size: 1em;
+    }
+
+}

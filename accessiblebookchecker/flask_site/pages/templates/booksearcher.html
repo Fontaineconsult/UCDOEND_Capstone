@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Access Checker</title>
+    <link href="/pages/static/styles.css" rel="stylesheet" , type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="icon"
+          type="image/x-icon"
+          href="/images/favicon_bsI_icon.ico"/>
+</head>
+<main>
+<body>
+
+<!-- ##! How to tell if books are from SF State. Make it obvious-->
+<!-- ##! No results template-->
+<div class="main-content-box">
+
+    <div class="upper-container">
+        <div class = "search-bar">
+            <form autocomplete="off" class="text-input-form">
+                <label for="bookSearchInput" class="text-search-label">Accessible Book Search</label>
+                <input aria-controls="searchFeedback"  id="bookSearchInput" title="book search input" type="text" name="isbn" class="text-input" placeholder="ISBN or Course" data-bind="textInput: searchInput">
+                <div data-bind="visible: searchInput().length === 0 || isNan() === false, css: { overThirteenCount: searchInput().length > 13}" class="counter-container"><div class="isbn-counter" data-bind="text: searchOutput().length"></div><span class="isbn-counter"> / 13 digits</span></div>
+            </form>
+        </div>
+
+        <div data-bind="template: { name: 'sfstate message books', if: isNan() === false  && searchOutput().length > 0 && validISBN() == true}"></div>
+        <div data-bind="template: { name: 'sfstate message courses', if: isNan() === true}"></div>
+        <div data-bind="template: { name: 'sfstate message not official', if: validISBN() === false}"></div>
+        <div class="semester-display">Semester: <b>Spring 2019</b></div>
+    </div>
+
+    <div class="lower-container">
+        <div class="content-separator"></div>
+        <div data-bind="template: { name: 'results-summary', if: searchReturnCount().length > 0 && validISBN() === true && incompleteISBN() === false}"></div>
+        <div class="inner-content-box" aria-live="polite" data-bind="template: { name: 'empty', if: searchOutput().length === 0}"></div>
+        <div class="inner-content-box" data-bind="template: { name: 'book-template', if: isNan() === false && searchOutput().length > 3}"></div>
+        <div class="inner-content-box" data-bind="template: { name: 'course-template', if: isNan() === true && textbookList().length > 0}"></div>
+        <div class="inner-content-box" aria-live="polite" data-bind="template: { name: 'no-results', if: isNan() === true && textbookList().length === 0 && searchOutput().length > 0}"></div>
+        <div class="inner-content-box isbn-warning" aria-live="polite" data-bind="template: { name: 'incomplete-isbn', if: incompleteISBN() === true}"></div>
+        <div class="inner-content-box isbn-warning" aria-live="polite" data-bind="template: { name: 'invalid-isbn', if: validISBN() === false}"></div>
+    </div>
+</div>
+
+
+
+<script type="text/html" id="empty">
+    <h1>
+        Search by ISBN or Course Name. Results will be checked for the existence of an accessible version. Textbooks used at SF State will be searched automatically.
+    </h1>
+</script>
+<script type="text/html" id="sfstate message books">
+    <h1 class="search-mode-notification">
+        Searching the SF State bookstore reading list for textbooks based on <b>ISBN</b>
+    </h1>
+</script>
+<script type="text/html" id="sfstate message courses">
+    <h1 class="search-mode-notification">
+        Searching the SF State bookstore reading list for textbooks based on <b>course</b>
+    </h1>
+</script>
+<script type="text/html" id="sfstate message not official">
+    <h1 class="search-mode-notification">
+        Searching for title <b>not</b> on the SF State bookstore reading list
+    </h1>
+</script>
+<script type="text/html" id="no-results">
+    <h2 class="no-results">
+        Sorry, there are no courses matching your search.
+    </h2>
+</script>
+<script type="text/html" id="incomplete-isbn">
+    <h2 class="no-results">
+        Sorry, there are no SF State textbooks matching this ISBN. Please enter a full 13 digit ISBN.
+    </h2>
+</script>
+<script type="text/html" id="invalid-isbn">
+    <h2 class="no-results">
+        Sorry, it looks like the ISBN you entered doesn't exist.
+    </h2>
+</script>
+<script type="text/html" id="book-template">
+    <table class="mainTable" data-bind="attr: { 'aria-live': ariaReadTable }">
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th data-bind="visible: courseColumnVisible()">Course</th>
+            <th>Accessible</th>
+        </tr>
+        </thead>
+
+        <tbody data-bind="foreach: textbookList">
+        <tr>
+            <td data-bind="text: isbn, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: title, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="visible: $parent.courseColumnVisible(), text: course, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: accessible, css: $data.statusCSS(), attr: {id: 'accessible-' + $index()}, event:{ mouseover: showSearchStatus, mouseout: hideSearchStatus}"></td>
+        </tr>
+        </tbody>
+    </table>
+</script>
+<script type="text/html" id="course-template">
+    <table class="mainTable" data-bind="attr: { 'aria-live': ariaReadTable }">
+        <thead>
+        <tr>
+            <th>Course</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Instructor</th>
+            <th>Accessible</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: textbookList">
+        <tr>
+            <td data-bind="text: course, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: isbn, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: title, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: instructor, attr: {id: 'accessibleRow-' + $index()}, click: checkAccessible"></td>
+            <td data-bind="text: accessible, css: $data.statusCSS(), attr: {id: 'accessible-' + $index()}, event:{ mouseover: showSearchStatus, mouseout: hideSearchStatus}"></td>
+        </tr>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="results-summary">
+<div class="search-result-summary">
+    <div class="search-result-summary-content" aria-live="polite">
+        <span data-bind="text: searchReturnCount().length"></span>
+        <span data-bind="visible: isNan() === true"> courses match your search</span>
+        <span data-bind="visible: isNan() === false"> textbooks match your search</span>
+    </div>
+</div>
+</script>
+
+
+<footer style="text-align: center">questions or comments please e-mail: amp@sfsu.edu</footer>
+</body>
+</main>
+<script src="/pages/static/jquery-3.2.1.js"></script>
+<script src="/pages/static/knockout-3.4.2.js"></script>
+<script src="/pages/static/pageFunctions.js"></script>
+<script src="/pages/static/indexViewModel.js"></script>
+
+
+
+</html>

@@ -1,0 +1,32 @@
+Dear {0},
+
+This is a courtesy e-mail from the DPRC Accessible Media Program regarding your course:
+
+{1}
+
+Media captioning is requested.
+
+A student enrolled in your course, {1}, requires a media captioning accommodation through the Disability Programs and Resource Center. Media captioning applies to any audio/video based instructional materials (podcasts, YouTube videos, DVD, etc.) used in this course and must be made accessible. Closed captions display the audio portion of a video as written text on the screen and is a recommended best practice for Universal Design for Learning
+
+The following steps can be taken now:
+
+* The DPRC accessible media program can automatically access your iLearn page and start captioning your videos. We will provide a captioned version to you to upload to replace the non-captioned video. Emails will come from captions@sfsu.edu
+
+* If you plan to use physical media (DVDs, VHS), please contact us to verify if they include closed captions. We will work with you to caption them if they do not.
+
+* If you are using PowerPoint presentations that contain video or audio, please let us know so we can start the captioning process.
+
+* We will automatically activate iLearn lecture capture captions (CourseStream/MediaSite). There may be up to a 48 hour delay before iLearn videos and MediaSite videos are captioned.
+
+Many videos can be captioned within two to three days. However, some formats, like VHS/DVD, can take more than a week for us to caption. Please submit captioning requests to us as soon as you can.
+
+In summary, videos shown in class must contain closed captions. If there are sign language interpreters or real-time captioners in your class, they should not be expected to be substitutes for uncaptioned videos. Please ensure all students have access to course materials in an appropriate timeframe. Students should not be expected to be tested on material covered in uncaptioned materials.
+
+If you have any questions, want to submit media to us for captioning, or do not plan to use media in your course, please reply to this e-mail. We are happy to discuss any concerns you may have about making your course accessible.
+
+Daniel Fontaine
+Accessible Media Program Coordinator
+Email: captions@sfsu.edu
+Phone: 415-338-6435
+
+

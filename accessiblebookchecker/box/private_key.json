@@ -1,0 +1,12 @@
+{
+  "boxAppSettings": {
+    "clientID": "zamp86vr1wge5m2p5txtmwiyv0sfwtes",
+    "clientSecret": "clypFeeezcp48KDE8rUEuLtaSzjHDqTd",
+    "appAuth": {
+      "publicKeyID": "t3glgw3g",
+      "privateKey": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIIUUuheyb/CsCAggA\nMBQGCCqGSIb3DQMHBAgfj62B+phBzQSCBMiQhqnJpvX4RKD6csPnoHAzp3nhOUCX\nqaeVjJnYN6KLjSO8k4v7hktvKbNqyh/X+yfoqJrGeHfZDA+IFjhN/if4stjxtH5N\nvGG5mlyX9/G19WnFgTkEA5e08QT4M4Q8HKRBeKW6pltTJIsMYWAiGgCBXhI5oMU5\nfLiWfC+ez8awnXOoc1oXBz/YsdYyUmnU7jA60Y+GSVB3YWNF/57q/u8bcWcS8btW\nq4zUyv5A1JuMQEq45EtrqK/meS3jhSIx6TM/foLdGuVQ3Dgqac9QUh1ceDoxnH3z\ntCqM+6iFkIhFMnNkXTUFps8Ik+HPYa1B4n8zW+cf8i35K2PNdAidzHjwoxrU9ziP\nMIYgG89ElChdQJvE/QusfDhbxCyXgK0ApgK5Skoc04eQ4EzClBt7HaXGL4gR5/oj\nWAlqVWmYxBRbFLTJKNouhOgx2fVJSIVzn2PqGwZMD22J80B39/09L79BCbpFZPQz\n8fmW9h1Uvmm846l0nGV3wXODEqAcgYq8cGSYheF1nXfnvuIOuRxbbJmBVw6meimU\nLo+VWZs4WM+XSjBf3Oy+/Syropw/iCar6FaFs/+ppMHXNBvqsUbQe5r9gBGSyxLh\nKnH4zDnoQ+rDvXKxy7w3Q+VtjEr3QRcMkAAWxhicjud1IRJTjVQryoPSYXseqT3r\nZcfvKlZj7zO69BS6E8rSgMArZ3BavMYRzK8rJ9y97AWv9V+YHEZEOb/3EgLYjEbt\n3uoYSwJPzthUGLn4WMi6ixsQCQXwgxyVbDyRmsCOdjlsALxfcmmGb+hZb9wC4Rmq\n1Ur1lIHVnYRSf8TFgTx87DZfv1FP3mFoVVn3FnjbITn8bHamhMvYPsa5iqeLkKFc\nXPH+XSkCJahFTtC5uWzF/i0G1j/icN8fm+13OMbeC6WblyegPv5rBvWn2bM6CmUq\ndx/jtYMGcqEZiZjuSKyz/qs2lVTnKa4nfJxZAKBglfcUaMM8kQ2/m3yfr79+KqxQ\nR/XY2ar8ZZreHi7AXJg8viA2IknbSC/z77Yr5GxGCtwqpxvJaYEtltEgV6Y4X5oN\nx19QuldstkWH5CivkFTdDkHlN527hYxp7rFNpZk/x8bTCtA3NBPNKZP3IeBWamih\nxmZGqwfmW4VmXRESvZucn4yj3RZ3eMODcfOaBPDbK1PIv2GoZjcI2iBwogwHIGL6\nmtFpHKGlnTVwoLVrJUnRHwMNw9ddQCZ1T66FDOf41I8gL/PuAEHyaSW7Q7gbKlQc\njWy/YpfvcA3m3H0ZBw0ry9ZfcxoPIobNpk/JEcyBczRa2xGKgOLq0bi5KkJOGfUM\nicvw25CQ7W6yxrjavOsx/c2U1QF9NHsKPNu9zv7Dts3Bm7IyHnabITL1yz3EshOB\n3TC3ekDHeu1aGJr+NDsXzWvDYjKDC92ysR0IEoR0MirOOb+0nw1mpi/CQoSUbmpn\nSkmnk6JuyOkWkKpKHdi2j36piFeUHJO4WsLBgYDIeucPAO+dNFal00ojYKnX8O9V\nhgCbwjLH7txQZVvVdNPeooYnSyzqC5z2EwCMwDrza5m35H35Yb46x19u0wduMs6Y\nLmQARO37LjpTXfL0v7QSuiP+143H7t6iznzbaRMHPbXQs3cmmNmwih0W2yTP/Lr8\nNcw=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+      "passphrase": "fe0533503e95636e5c4567bd23dbd4fa"
+    }
+  },
+  "enterpriseID": "281439"
+}
