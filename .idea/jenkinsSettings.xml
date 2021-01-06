@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Jenkins.Application.Settings">
+    <option name="serverUrl" value="http://ec2-44-234-59-75.us-west-2.compute.amazonaws.com:8080/" />
+    <option name="useGreenColor" value="true" />
+  </component>
+</project>
