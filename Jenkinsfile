@@ -13,7 +13,7 @@ pipeline {
         stage('build') {
 
             steps {
-                echo 'build step'
+                sh 'pip install pylint'
             }
 
         }
