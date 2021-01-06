@@ -1,3 +1,5 @@
+#!groovy
+
 pipeline {
 
     agent any
@@ -14,6 +16,8 @@ pipeline {
         stage('test') {
 
             steps {
+                cd accessiblebookchecker/booksearch
+                pylint atn_api.py
                 echo 'testvcb  fdgdfg step'
             }
 
