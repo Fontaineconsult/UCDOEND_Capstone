@@ -14,7 +14,7 @@ pipeline {
         stage("test") {
 
             steps {
-                echo 'test step'
+                echo 'testvcb step'
             }
 
         }
