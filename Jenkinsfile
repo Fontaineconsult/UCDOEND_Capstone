@@ -2,7 +2,12 @@
 
 pipeline {
 
-    agent any
+    agent {
+        docker {
+            image 'python:3.7.3-stretch'
+            label 'my-defined-label'
+        }
+    }
 
     stages {
 
