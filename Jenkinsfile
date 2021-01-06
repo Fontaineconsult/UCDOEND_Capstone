@@ -21,7 +21,7 @@ pipeline {
 
             steps {
                 echo 'python --version'
-                sh 'pylint accessiblebookchecker/booksearch/atn_api.py' +
+                sh 'pylint accessiblebookchecker/booksearch/atn_api.py'
 
 
                 echo 'testvcb   fdgdfg step'
