@@ -21,7 +21,7 @@ pipeline {
         stage("lint") {
 
             steps {
-                echo 'lint step'
+                echo 'lint step STERG'
             }
 
         }
