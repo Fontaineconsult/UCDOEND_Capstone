@@ -13,6 +13,8 @@ pipeline {
         stage('build') {
 
             steps {
+                sh 'ls'
+                sh 'python --version'
                 sh 'sudo pip install pylint'
             }
 
