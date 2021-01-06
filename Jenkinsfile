@@ -22,7 +22,7 @@ pipeline {
             steps {
                 cd accessiblebookchecker/booksearch
                 pylint atn_api.py
-                echo 'testvcb  fdgdfg step'
+                echo 'testvcb   fdgdfg step'
             }
 
         }
