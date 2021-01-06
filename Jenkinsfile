@@ -20,8 +20,9 @@ pipeline {
         stage('test') {
 
             steps {
-                sh 'cd accessiblebookchecker/booksearch /' +
-                        'pylint atn_api.py'
+                echo 'python --version'
+                sh 'pylint accessiblebookchecker/booksearch/atn_api.py' +
+
 
                 echo 'testvcb   fdgdfg step'
             }
