@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'python --version'
-                sh 'sudo pip install pylint'
+                sh 'pip install pylint --user'
             }
 
         }
