@@ -4,28 +4,28 @@ pipeline {
 
     stages {
 
-        stage("build") {
+        stage('build') {
 
             steps {
                 echo 'build step'
             }
 
         }
-        stage("test") {
+        stage('test') {
 
             steps {
                 echo 'testvcb step'
             }
 
         }
-        stage("lint") {
+        stage('lint') {
 
             steps {
                 echo 'lint step STERG'
             }
 
         }
-        stage("deploy") {
+        stage('deploy') {
 
             steps {
                 echo 'deploy step TEST'
