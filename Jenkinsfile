@@ -22,25 +22,24 @@ pipeline {
             }
 
         }
-        stage('test') {
+        stage('lint') {
 
             steps {
                 echo 'python --version'
-                sh 'pylint accessiblebookchecker/booksearch/atn_api.py'
-
+                sh 'pylint lint_dummy.py'
 
                 echo 'testvcb   fdgdfg step'
             }
 
         }
-        stage('lint') {
+        stage('test') {
 
             steps {
                 echo 'lint step   STERG'
             }
 
         }
-        stage('deploy') {
+        stage('build image') {
 
             steps {
                 echo 'deploy step TEST'
