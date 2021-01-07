@@ -14,7 +14,6 @@ pipeline {
         stage('build') {
 
             steps {
-                sh 'apt-get install sudo'
                 sh 'ls'
                 sh 'python --version'
                 sh '''#!/bin/bash
