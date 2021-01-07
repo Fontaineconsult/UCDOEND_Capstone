@@ -1,15 +1,11 @@
 import sys
+
+sys.path.append('/usr/local/lib/python3.7/site-packages')
+
 from flask import Flask
-import flask_saml
 from flask_cors import CORS
-from flask_login import LoginManager, UserMixin
 
 
-sys.path.append("/vagrant/booksearch")
-sys.path.append("/vagrant/captioning")
-sys.path.append("/vagrant/flask_site")
-sys.path.append("C:/users/DanielPC/Box/Servers/accessiblebookchecker/")
-sys.path.append("/var/www/alt_media_services/venv/lib/python3.6/site-packages")
 
 app = Flask(__name__)
 

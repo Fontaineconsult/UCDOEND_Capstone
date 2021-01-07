@@ -3,11 +3,6 @@
 import sys
 import os
 
-sys.path.insert(0, "/vagrant/accessiblebookchecker")
-sys.path.insert(0, "/vagrant/accessiblebookchecker/venv35/lib/python3.5/site-packages")
-sys.path.append("/var/www/alt_media_services/site")
-sys.path.append("C:\\Users\\DanielPC\\Desktop\\Servers\\alt_media_services\\accessiblebookchecker")
-sys.path.append("/var/www/alt_media_services/lib/python3.6/site-packages")
 
 current_dir = os.getcwd()
 print(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..')))
