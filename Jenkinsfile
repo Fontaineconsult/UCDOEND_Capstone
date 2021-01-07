@@ -17,7 +17,7 @@ pipeline {
                 sh 'ls'
                 sh 'python --version'
                 sh '''#!/bin/bash
-                 sudo pip install pylint
+                 pip install pylint
                 '''
             }
 
