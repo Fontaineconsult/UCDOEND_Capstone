@@ -1,4 +1,5 @@
-FROM python:3.7.3-stretch
+FROM wesbarnett/apache-flask:bionic-x86_64
+
 
 ## Step 1:
 WORKDIR /app
@@ -10,6 +11,8 @@ COPY . requirements.txt ./
 ## Step 3:
 # hadolint ignore=DL3013
 RUN apt update &&\
+    apt-get install libpq-dev python-dev
+    pip install psycopg2-binary
     apt install apache2 -y &&\
     apt-get install libapache2-mod-wsgi-py3 python-dev -y
 
