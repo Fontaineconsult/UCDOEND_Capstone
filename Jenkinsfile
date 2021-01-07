@@ -4,7 +4,7 @@ pipeline {
 
     agent {
         docker {
-            image 'ubuntu'
+            image 'python:3.7.3-stretch'
         }
     }
 
@@ -13,6 +13,7 @@ pipeline {
         stage('build') {
 
             steps {
+                sh 'apt-get install sudo'
                 sh 'ls'
                 sh 'python --version'
                 sh '''#!/bin/bash
