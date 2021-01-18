@@ -14,7 +14,7 @@ page_routes = Blueprint('pages',
 
 @page_routes.route("/")
 def main():
-    return "This is the SF State Accessible Media Program's application page"
+    return "This is the SF State Accessible Media Program's application page GREEEEEEENNNNNN"
 
 
 # @page_routes.route('/booksearcher', methods=['GET', 'POST'])

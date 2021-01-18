@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-green
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: green
+  template:
+    metadata:
+      labels:
+        app: green
+    spec:
+      containers:
+        - name: capstone-green
+          image: 354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:latest
+          command: ["apachectl", "-D", "FOREGROUND"]
+          ports:
+            - containerPort: 80

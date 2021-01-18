@@ -1,0 +1,26 @@
+---
+
+- name: "configuration play."
+  hosts: web
+  user: ubuntu
+  gather_facts: true
+
+  tasks:
+
+    - name: "Install Minikube"
+      shell: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+
+    - name: "Set Docker Driver"
+      shell: |
+        minikube config set driver docker
+
+    - name: "Start MiniKube"
+      shell: |
+        minikube start
+
+    - name: "Install Kubectl"
+      shell: |
+        snap install kubectl --classic

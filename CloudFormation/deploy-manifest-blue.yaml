@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-blue
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blue
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      containers:
+        - name: capstone-blue
+          image: 354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:latest
+          command: ["apachectl", "-D", "FOREGROUND"]
+          ports:
+            - containerPort: 80

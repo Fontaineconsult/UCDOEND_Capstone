@@ -31,8 +31,8 @@ COPY  capstone.wsgi /var/www/capstone
 RUN a2ensite capstone.conf
 RUN a2dissite 000-default.conf
 
-RUN pip3 uninstall toastedmarshmallow==2.15.2.post1
-RUN pip3 install toastedmarshmallow==2.15.2.post1
+RUN echo "y" | pip uninstall toastedmarshmallow==2.15.2.post1
+RUN pip install toastedmarshmallow==2.15.2.post1
 
 
 ## Step 4:
