@@ -60,7 +60,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                echo 'docker build --tag=capstone-blue-test .'
+                echo 'docker build --tag=capstone-test .'
             }
 
         }
@@ -69,7 +69,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                echo 'docker images'
+                sh 'docker images'
             }
 
         }
