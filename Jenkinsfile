@@ -34,8 +34,10 @@ pipeline {
                 sh '''#!/bin/bash
                  pip install pylint
                 '''
-                sh 'pip install -r requirements.txt'
-                sh 'pip install astroid==2.4.2'
+                sh 'apt-get update'
+                sh 'apt-get install awscli'
+//                sh 'pip install -r requirements.txt'
+//                sh 'pip install astroid==2.4.2'
             }
 
         }
