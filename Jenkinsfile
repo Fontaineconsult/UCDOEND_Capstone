@@ -2,18 +2,20 @@
 def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
                        credentialsId: '88651025-f487-48f4-8324-6cff583725ecl']]
 
-environment {
-    AWS_REGION = 'us-west-2'
 
-}
 
-options {
-
-    withCredentials(awsCredentials)
-}
 
 
 pipeline {
+
+    environment {
+        AWS_REGION = 'us-west-2'
+
+    }
+
+    options {
+        withCredentials(awsCredentials)
+    }
 
     agent {
         docker {
