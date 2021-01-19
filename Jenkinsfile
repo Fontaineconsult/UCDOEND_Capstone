@@ -41,7 +41,7 @@ pipeline {
 
             steps {
                 echo 'python --version'
-                sh 'pylint lint_dummy.py'
+                sh 'pylint file_to_lint.py'
 
                 echo 'testvcb   fdgdfg step'
             }
