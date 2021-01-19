@@ -35,7 +35,7 @@ pipeline {
                  pip install pylint
                 '''
                 sh 'apt-get update'
-                sh 'apt-get install awscli'
+                sh 'apt-get install -y awscli'
 //                sh 'pip install -r requirements.txt'
 //                sh 'pip install astroid==2.4.2'
             }
