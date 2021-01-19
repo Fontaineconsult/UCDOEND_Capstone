@@ -35,6 +35,7 @@ pipeline {
                  pip install pylint
                 '''
                 sh 'pip install -r requirements.txt'
+                sh 'pip install astroid==2.5'
             }
 
         }
@@ -43,8 +44,6 @@ pipeline {
             steps {
                 echo 'python --version'
                 sh 'pylint file_to_lint.py'
-
-                echo 'testvcb   fdgdfg step'
             }
 
         }
