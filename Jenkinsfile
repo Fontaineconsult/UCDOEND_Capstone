@@ -54,13 +54,15 @@ pipeline {
 
             steps {
                 echo 'lint step   STERG'
+
             }
         }
         stage('build image') {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'docker build --tag=capstone-test .'
+                app = docker.build("capstone-test")
+
             }
 
         }
@@ -70,6 +72,7 @@ pipeline {
             steps {
                 sh 'aws s3 ls'
                 sh 'docker images'
+
             }
 
         }
