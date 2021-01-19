@@ -42,8 +42,8 @@ pipeline {
         stage('lint') {
 
             steps {
-                echo 'python --version'
-                sh 'pylint file_to_lint.py'
+                echo 'needs to be linted'
+
             }
 
         }
