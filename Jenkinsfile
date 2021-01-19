@@ -36,6 +36,7 @@ pipeline {
                 '''
                 sh 'apt-get update'
                 sh 'apt-get install -y awscli'
+                sh 'apt-get install -y docker'
 //                sh 'pip install -r requirements.txt'
 //                sh 'pip install astroid==2.4.2'
             }
@@ -59,7 +60,16 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                echo 'deploy step TEST'
+                echo 'docker build --tag=capstone-blue-test .'
+            }
+
+        }
+
+        stage('upload image') {
+
+            steps {
+                sh 'aws s3 ls'
+                echo 'docker images'
             }
 
         }
