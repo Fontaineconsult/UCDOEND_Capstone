@@ -2,7 +2,6 @@
 def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
                        credentialsId: '88651025-f487-48f4-8324-6cff583725ec']]
 
-def app
 
 
 
@@ -61,7 +60,11 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                app = docker.build("capstone-test")
+
+                script {
+                    def app = docker.build("capstone-test")
+
+                }
 
             }
 
