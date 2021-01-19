@@ -30,7 +30,7 @@ pipeline {
 
             steps {
                 sh 'ls'
-                sh 'python --version'
+                sh 'pip install --upgrade pip'
                 sh '''#!/bin/bash
                  pip install pylint
                 '''
