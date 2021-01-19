@@ -54,7 +54,7 @@ pipeline {
         stage('build image') {
 
             steps {
-                aws s3 ls
+                sh 'aws s3 ls'
                 echo 'deploy step TEST'
             }
 
