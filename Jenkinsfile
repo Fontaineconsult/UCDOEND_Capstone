@@ -60,7 +60,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                echo 'docker build --tag=capstone-test .'
+                sh 'docker build --tag=capstone-test .'
             }
 
         }
