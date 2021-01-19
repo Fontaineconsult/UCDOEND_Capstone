@@ -26,7 +26,7 @@ pipeline {
 
     stages {
 
-        stage('build') {
+        stage('install') {
 
             steps {
                 sh 'ls'
@@ -34,6 +34,7 @@ pipeline {
                 sh '''#!/bin/bash
                  pip install pylint
                 '''
+                sh 'pip install -r requirements.txt'
             }
 
         }
