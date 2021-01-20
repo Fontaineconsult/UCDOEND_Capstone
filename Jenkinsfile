@@ -82,7 +82,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'docker build capstone-test'
+                sh ' docker build -t capstone-test .'
 
 
 
