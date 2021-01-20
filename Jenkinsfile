@@ -7,15 +7,6 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 
 pipeline {
 
-    environment {
-        AWS_REGION = 'us-west-2'
-
-    }
-
-    options {
-        withCredentials(awsCredentials)
-    }
-
 
     agent {
         docker {
@@ -37,7 +28,7 @@ pipeline {
                 '''
                 sh 'apt-get update'
                 sh 'apt-get install -y awscli'
-//                sh 'apt-get install -y docker'
+
 
 //                sh 'pip install -r requirements.txt'
 //                sh 'pip install astroid==2.4.2'
