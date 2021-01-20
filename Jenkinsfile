@@ -52,6 +52,7 @@ pipeline {
         }
         stage('lint') {
 
+
             steps {
                 echo 'needs to be linted'
 
