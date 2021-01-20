@@ -16,21 +16,9 @@ pipeline {
         withCredentials(awsCredentials)
     }
 
-    agent {
-        label 'docker'
-
-    }
+    agent any
 
     stages {
-        agent {
-            label 'docker'
-            docker {
-                image 'python:3.7.3-stretch'
-                args '-u root:root'
-            }
-
-
-        }
 
 //        stage('Initialize'){
 //
@@ -79,14 +67,14 @@ pipeline {
         stage('build image') {
 
             steps {
-//                sh 'aws s3 ls'
-//                sh 'docker build capstone-test . '
+                sh 'aws s3 ls'
+                sh 'docker build capstone-test . '
 
-                script {
-
-                    dockerImage = docker.build "test" + ":$BUILD_NUMBER"
-
-                }
+//                script {
+//
+//                    dockerImage = docker.build "test" + ":$BUILD_NUMBER"
+//
+//                }
 
             }
 
