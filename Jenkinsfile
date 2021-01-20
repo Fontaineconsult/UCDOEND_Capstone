@@ -17,16 +17,16 @@ pipeline {
     }
 
 
-
-    stages {
-        agent {
-            label 'docker'
-            docker {
-                image 'python:3.7.3-stretch'
-                args '-u root:root'
-            }
-
+    agent {
+        label 'docker'
+        docker {
+            image 'python:3.7.3-stretch'
+            args '-u root:root'
         }
+
+    }
+    stages {
+
 
         stage('install') {
 
@@ -66,19 +66,34 @@ pipeline {
 
 
 
+
+
+
+
+    }
+
+
+}
+
+pipeline {
+
+    environment {
+        AWS_REGION = 'us-west-2'
+
+    }
+    options {
+        withCredentials(awsCredentials)
+    }
+    agent any
     stages {
-        agent any
+
         stage('build image') {
 
             steps {
                 sh 'aws s3 ls'
                 sh 'docker build capstone-test . '
 
-//                script {
-//
-//                    dockerImage = docker.build "test" + ":$BUILD_NUMBER"
-//
-//                }
+
 
             }
 
@@ -92,10 +107,6 @@ pipeline {
             }
 
         }
-    }
-
-
-
     }
 
 
