@@ -45,12 +45,8 @@ pipeline {
                 '''
                 sh 'apt-get update'
                 sh 'apt-get install -y awscli'
-                sh 'apt-get install -y docker'
+//                sh 'apt-get install -y docker'
 
-                sh 'groupadd docker'
-                sh 'usermod -aG docker $USER'
-                sh 'chmod a+rwx /var/run/docker.sock'
-                sh 'chmod a+rwx /var/run/docker.pid'
 //                sh 'pip install -r requirements.txt'
 //                sh 'pip install astroid==2.4.2'
             }
@@ -79,10 +75,11 @@ pipeline {
                 sh 'aws s3 ls'
                 sh 'docker build capstone-test . '
 
-//                script {
-//                    def app = docker.build("capstone-test")
-//
-//                }
+                script {
+
+                    dockerImage = docker.build "test" + ":$BUILD_NUMBER"
+
+                }
 
             }
 
