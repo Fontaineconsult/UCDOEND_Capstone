@@ -25,15 +25,15 @@ pipeline {
 
     stages {
 
-        stage('Initialize'){
-
-            steps{
-                def dockerHome = tool 'JenkinsDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-
-
-        }
+//        stage('Initialize'){
+//
+//            steps{
+//                def dockerHome = tool 'JenkinsDocker'
+//                env.PATH = "${dockerHome}/bin:${env.PATH}"
+//            }
+//
+//
+//        }
 
         stage('install') {
 
@@ -71,11 +71,12 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
+                sh 'docker build capstone-test . '
 
-                script {
-                    def app = docker.build("capstone-test")
-
-                }
+//                script {
+//                    def app = docker.build("capstone-test")
+//
+//                }
 
             }
 
