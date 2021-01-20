@@ -46,6 +46,11 @@ pipeline {
                 sh 'apt-get update'
                 sh 'apt-get install -y awscli'
                 sh 'apt-get install -y docker'
+
+                sh 'sudo groupadd docker'
+                sh 'sudo usermod -aG docker $USER'
+                sh 'sudo chmod a+rwx /var/run/docker.sock'
+                sh 'sudo chmod a+rwx /var/run/docker.pid'
 //                sh 'pip install -r requirements.txt'
 //                sh 'pip install astroid==2.4.2'
             }
