@@ -17,13 +17,20 @@ pipeline {
     }
 
     agent {
-        docker {
-            image 'python:3.7.3-stretch'
-            args '-u root:root'
-        }
+        label 'docker'
+
     }
 
     stages {
+        agent {
+            label 'docker'
+            docker {
+                image 'python:3.7.3-stretch'
+                args '-u root:root'
+            }
+
+
+        }
 
 //        stage('Initialize'){
 //
@@ -89,7 +96,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'docker images'
+                sh 'docker image ls'
 
             }
 
