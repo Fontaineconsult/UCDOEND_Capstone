@@ -5,65 +5,65 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 
 
 
-pipeline {
-
-
-    agent {
-        docker {
-            image 'python:3.7.3-stretch'
-            args '-u root:root'
-        }
-
-    }
-    stages {
-
-
-        stage('install') {
-
-            steps {
-                sh 'ls'
-                sh 'pip install --upgrade pip'
-                sh '''#!/bin/bash
-                 pip install pylint
-                '''
-                sh 'apt-get update'
-                sh 'apt-get install -y awscli'
-
-
-//                sh 'pip install -r requirements.txt'
-//                sh 'pip install astroid==2.4.2'
-            }
-
-        }
-        stage('lint') {
-
-
-            steps {
-                echo 'needs to be linted'
-
-            }
-
-        }
-        stage('test') {
-
-            steps {
-                echo 'lint step   STERG'
-
-            }
-
-        }
-
-
-
-
-
-
-
-
-    }
-
-
-}
+//pipeline {
+//
+//
+//    agent {
+//        docker {
+//            image 'python:3.7.3-stretch'
+//            args '-u root:root'
+//        }
+//
+//    }
+//    stages {
+//
+//
+//        stage('install') {
+//
+//            steps {
+//                sh 'ls'
+//                sh 'pip install --upgrade pip'
+//                sh '''#!/bin/bash
+//                 pip install pylint
+//                '''
+//                sh 'apt-get update'
+//
+//
+//
+////                sh 'pip install -r requirements.txt'
+////                sh 'pip install astroid==2.4.2'
+//            }
+//
+//        }
+//        stage('lint') {
+//
+//
+//            steps {
+//                echo 'needs to be linted'
+//
+//            }
+//
+//        }
+//        stage('test') {
+//
+//            steps {
+//                echo 'lint step   STERG'
+//
+//            }
+//
+//        }
+//
+//
+//
+//
+//
+//
+//
+//
+//    }
+//
+//
+//}
 
 pipeline {
 
@@ -71,9 +71,9 @@ pipeline {
         AWS_REGION = 'us-west-2'
 
     }
-    options {
-        withCredentials(awsCredentials)
-    }
+//    options {
+//        withCredentials(awsCredentials)
+//    }
     agent any
     stages {
 
