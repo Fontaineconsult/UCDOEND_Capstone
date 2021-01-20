@@ -66,6 +66,7 @@ pipeline {
                 echo 'lint step   STERG'
 
             }
+
         }
         stage('build image') {
 
