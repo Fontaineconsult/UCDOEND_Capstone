@@ -72,8 +72,8 @@ pipeline {
         stage('build image') {
 
             steps {
-                sh 'aws s3 ls'
-                sh 'docker build capstone-test . '
+//                sh 'aws s3 ls'
+//                sh 'docker build capstone-test . '
 
                 script {
 
