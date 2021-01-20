@@ -16,20 +16,26 @@ pipeline {
         withCredentials(awsCredentials)
     }
 
-    agent any
+
 
     stages {
+        agent {
+            label 'docker'
+            docker {
+                image 'python:3.7.3-stretch'
+                args '-u root:root'
+            }
 
-//        stage('Initialize'){
-//
-//            steps{
-//                def dockerHome = tool 'JenkinsDocker'
-//                env.PATH = "${dockerHome}/bin:${env.PATH}"
-//            }
-//
-//
-//        }
+        }
+        stage('Initialize'){
 
+            steps{
+                def dockerHome = tool 'JenkinsDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }
+
+
+        }
         stage('install') {
 
             steps {
@@ -64,6 +70,12 @@ pipeline {
             }
 
         }
+
+
+
+
+    stages {
+        agent any
         stage('build image') {
 
             steps {
@@ -79,7 +91,6 @@ pipeline {
             }
 
         }
-
         stage('upload image') {
 
             steps {
@@ -89,6 +100,9 @@ pipeline {
             }
 
         }
+    }
+
+
 
     }
 
