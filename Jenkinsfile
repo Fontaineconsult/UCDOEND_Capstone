@@ -5,19 +5,19 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 
 
 
-//pipeline {
-//
-//
-//    agent {
-//        docker {
-//            image 'python:3.7.3-stretch'
-//            args '-u root:root'
-//        }
-//
-//    }
-//    stages {
-//
-//
+pipeline {
+
+
+    agent {
+        docker {
+            image 'python:3.7.3-stretch'
+            args '-u root:root'
+        }
+
+    }
+    stages {
+
+
 //        stage('install') {
 //
 //            steps {
@@ -35,35 +35,35 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 //            }
 //
 //        }
-//        stage('lint') {
-//
-//
-//            steps {
-//                echo 'needs to be linted'
-//
-//            }
-//
-//        }
-//        stage('test') {
-//
-//            steps {
-//                echo 'lint step   STERG'
-//
-//            }
-//
-//        }
-//
-//
-//
-//
-//
-//
-//
-//
-//    }
-//
-//
-//}
+        stage('lint') {
+
+
+            steps {
+                echo 'needs to be linted'
+
+            }
+
+        }
+        stage('test') {
+
+            steps {
+                echo 'lint step   STERG'
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+}
 
 pipeline {
 
@@ -71,30 +71,25 @@ pipeline {
         AWS_REGION = 'us-west-2'
 
     }
-//    options {
-//        withCredentials(awsCredentials)
-//    }
     agent any
     stages {
 
-
-        stage('build image') {
-
-            steps {
-                sh 'aws s3 ls'
-                sh ' docker build -t capstone-test .'
-
-
-
-            }
-
-
-        }
+//
+//        stage('build image') {
+//
+//            steps {
+//                sh 'aws s3 ls'
+//                sh ' docker build -t capstone-test .'
+//
+//            }
+//
+//
+//        }
         stage('upload image') {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'docker image ls'
+                sh 'kubectl get pods --all-namespaces'
 
             }
 
