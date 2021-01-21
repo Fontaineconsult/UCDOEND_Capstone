@@ -5,19 +5,19 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 
 
 
-pipeline {
-
-
-    agent {
-        docker {
-            image 'python:3.7.3-stretch'
-            args '-u root:root'
-        }
-
-    }
-    stages {
-
-
+//pipeline {
+//
+//
+//    agent {
+//        docker {
+//            image 'python:3.7.3-stretch'
+//            args '-u root:root'
+//        }
+//
+//    }
+//    stages {
+//
+//
 //        stage('install') {
 //
 //            steps {
@@ -35,35 +35,35 @@ pipeline {
 //            }
 //
 //        }
-        stage('lint') {
-
-
-            steps {
-                echo 'needs to be linted'
-
-            }
-
-        }
-        stage('test') {
-
-            steps {
-                echo 'lint step   STERG'
-
-            }
-
-        }
-
-
-
-
-
-
-
-
-    }
-
-
-}
+//        stage('lint') {
+//
+//
+//            steps {
+//                echo 'needs to be linted'
+//
+//            }
+//
+//        }
+//        stage('test') {
+//
+//            steps {
+//                echo 'lint step   STERG'
+//
+//            }
+//
+//        }
+//
+//
+//
+//
+//
+//
+//
+//
+//    }
+//
+//
+//}
 
 pipeline {
 
@@ -85,6 +85,7 @@ pipeline {
 //
 //
 //        }
+
         stage('upload image') {
 
             steps {
