@@ -90,7 +90,7 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'eksctl create cluster -f clusterconfig.yaml'
+                sh 'eksctl create cluster -f EKS/clusterconfig.yaml'
                 sh 'kubectl get pods --all-namespaces'
 
             }
