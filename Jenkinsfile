@@ -90,9 +90,9 @@ pipeline {
 
             steps {
                 sh 'aws s3 ls'
-                sh 'eksctl create cluster -f EKS/clusterconfig.yaml'
-                sh 'kubectl get pods --all-namespaces'
-
+                sh 'kubectl config set-cluster cap3 --server=https://365E2C3E7B69BF167DE75EB24BEE0EEF.yl4.us-west-2.eks.amazonaws.com'
+                sh 'kubectl config get-clusters'
+                sh 'kubectl get pods'
             }
 
         }
