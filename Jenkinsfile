@@ -88,6 +88,7 @@ pipeline {
 
         stage('upload image') {
 
+
             steps {
                 sh 'aws s3 ls'
                 sh 'kubectl config set-cluster cap3 --server=https://365E2C3E7B69BF167DE75EB24BEE0EEF.yl4.us-west-2.eks.amazonaws.com'
