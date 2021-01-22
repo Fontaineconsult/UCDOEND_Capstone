@@ -90,9 +90,11 @@ pipeline {
 
 
             steps {
-                sh 'aws s3 ls'
-                sh 'kubectl config get-clusters'
-                sh 'kubectl get pods'
+
+                sh 'kubectl apply -f ./EKS/clusterconfig.yaml'
+                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
+                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
+                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
             }
 
         }

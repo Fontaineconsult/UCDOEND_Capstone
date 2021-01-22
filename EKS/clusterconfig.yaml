@@ -1,7 +1,7 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: cap3
+  name: cap3-jenkins
   region: us-west-2
 vpc:
   subnets:
@@ -11,7 +11,7 @@ vpc:
       us-west-2d:
         id: subnet-01a9705c8da16aa01
 nodeGroups:
-  - name: ng1
+  - name: ng-jenkins
     instanceType: t2.medium
     desiredCapacity: 1
     privateNetworking: true
