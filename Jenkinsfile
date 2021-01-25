@@ -84,7 +84,7 @@ pipeline {
                     
                     if [ "$deployment" == "blue" ]
                     then
-                       docker build -t capstone-green:$BUILD_NUMBER .
+                       docker build -t capstone-green:latest .
                        id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                        repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:latest"
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
@@ -95,7 +95,7 @@ pipeline {
                          
                    if [ "$deployment" == "green" ]
                     then
-                      docker build -t capstone-blue:$BUILD_NUMBER .
+                      docker build -t capstone-blue:latest .
                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                       repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:latest"
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
