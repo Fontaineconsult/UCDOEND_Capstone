@@ -79,9 +79,6 @@ pipeline {
 
             steps {
                 sh '''
-
-                    docker build
-
                     deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
                     
                     if [ "$deployment" == "blue" ]
