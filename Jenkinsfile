@@ -88,7 +88,7 @@ pipeline {
                        id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                        repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:latest"
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
-                       docker tag "capstone-green:$BUILD_NUMBER" $repo
+                       docker tag capstone-green:latest $repo
                        docker push $repo
                       
                     fi
@@ -99,7 +99,7 @@ pipeline {
                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                       repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:latest"
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
-                      docker tag "capstone-blue:$BUILD_NUMBER" $repo
+                      docker tag capstone-blue:latest $repo
                       docker push $repo
                       
                    fi                    
