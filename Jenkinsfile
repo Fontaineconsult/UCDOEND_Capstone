@@ -74,23 +74,34 @@ pipeline {
     agent any
     stages {
 
-//
-//        stage('build image') {
-//
-//            steps {
-//                sh 'aws s3 ls'
-//                sh ' docker build -t capstone-test .'
-//
-//            }
-//
-//
-//        }
 
-        stage('upload image') {
+        stage('build image') {
+
+            steps {
+                sh '''
+
+                    deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
+                    
+                    if [ "$deployment" == "blue" ]
+                    then
+                       docker image ls
+                    fi
+                         
+                   if [ "$deployment" == "green" ]
+                    then
+                       docker image ls
+                   fi                    
+                   
+                    '''
+            }
+
+
+        }
+
+        stage('Switch Load Balancer') {
 
 
             steps {
-
 
                   sh '''
                     deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
@@ -99,28 +110,16 @@ pipeline {
                     then
                     kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "green"}}}'
                     fi
-                    
-                    
-                    
+                         
                    if [ "$deployment" == "green" ]
                     then
                     kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
                    fi                    
-                    
-                    
+                   
                     '''
-
                   sh 'echo $deployment'
-//                sh 'eksctl create cluster -f ./EKS/clusterconfig_create_eksctl.yaml'
-//                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
-//                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
-//                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
 
-//                  sh '''
-//
-//                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
-//
-//                    '''
+
             }
 
         }
