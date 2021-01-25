@@ -91,10 +91,17 @@ pipeline {
 
             steps {
 
-                sh 'eksctl create cluster -f ./EKS/clusterconfig_create_eksctl.yaml'
-                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
-                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
-                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
+
+                  sh 'kubectl get services'
+                  sh 'kubectl kubectl get pods --all-namespace'
+                  sh 'kubectl get pods -o wide'
+                  sh 'kubectl get deployments'
+                  sh 'kubectl get services'
+
+//                sh 'eksctl create cluster -f ./EKS/clusterconfig_create_eksctl.yaml'
+//                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
+//                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
+//                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
             }
 
         }
