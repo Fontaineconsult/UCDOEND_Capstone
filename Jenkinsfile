@@ -80,18 +80,29 @@ pipeline {
             steps {
                 sh '''
 
+                    docker build
+
                     deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
                     
                     if [ "$deployment" == "blue" ]
                     then
-                       docker image ls
+                       docker build -t capstone-green .
+                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
+                       repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-green:$BUILD_NUMBER"
+                       docker tag capstone-green:latest $repo
+                       docker push $repo
+                      
                     fi
                          
                    if [ "$deployment" == "green" ]
                     then
-                       docker image ls
+                      docker build -t capstone-blue .
+                      id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
+                      repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:$BUILD_NUMBER"
+                      docker tag capstone-blue:latest $repo
+                      docker push $repo
                    fi                    
-                   
+                    
                     '''
             }
 
