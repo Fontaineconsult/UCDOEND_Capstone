@@ -93,7 +93,19 @@ pipeline {
 
 
                   sh '''
-                    export deployment = kubectl get service capstone-app -o=jsonpath={.spec.selector.app}
+                    deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
+                    
+                    if [ $deployment = blue]
+                    then
+                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "green"}}}'
+                    fi
+                    
+                   if [ $deployment = green]
+                    then
+                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
+                   fi                    
+                    
+                    
                     '''
 
                   sh 'echo $deployment'
@@ -102,11 +114,11 @@ pipeline {
 //                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
 //                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
 
-                  sh '''
-
-                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
-                    
-                    '''
+//                  sh '''
+//
+//                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
+//
+//                    '''
             }
 
         }
