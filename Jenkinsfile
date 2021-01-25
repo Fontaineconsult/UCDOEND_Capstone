@@ -101,7 +101,7 @@ pipeline {
 
                   sh '''
 
-                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
+                    kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "green"}}}'
                     
                     '''
             }
