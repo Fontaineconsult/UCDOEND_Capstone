@@ -106,11 +106,9 @@ pipeline {
                     '''
             }
 
-
         }
 
         stage('Switch Load Balancer') {
-
 
             steps {
 
@@ -129,7 +127,6 @@ pipeline {
                    
                     '''
                   sh 'echo $deployment'
-
 
             }
 
