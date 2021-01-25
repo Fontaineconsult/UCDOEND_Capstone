@@ -15,6 +15,6 @@ nodeGroups:
     instanceType: t2.medium
     desiredCapacity: 1
     privateNetworking: true
-#    ssh:
-#      publicKeyPath: ~/.ssh/id_rsa.pub
+    ssh:
+      publicKeyPath: ~/.ssh/id_rsa.pub
 
