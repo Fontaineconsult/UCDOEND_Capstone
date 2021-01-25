@@ -92,10 +92,7 @@ pipeline {
             steps {
 
 
-                  sh 'kubectl get services'
-                  sh 'kubectl get pods -o wide'
-                  sh 'kubectl get deployments'
-                  sh 'kubectl get services'
+                  sh 'kubectl get pods --selector=app'
 
 //                sh 'eksctl create cluster -f ./EKS/clusterconfig_create_eksctl.yaml'
 //                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
