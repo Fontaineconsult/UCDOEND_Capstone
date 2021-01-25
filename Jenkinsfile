@@ -95,13 +95,13 @@ pipeline {
                   sh '''
                     deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
                     
-                    if [ $deployment = blue]
+                    if [ "$deployment" == "blue" ]
                     then
                     kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "green"}}}'
                     fi
                     
                     
-                   if [ $deployment = green]
+                   if [ "$deployment" == "green" ]
                     then
                     kubectl patch service capstone-app -p '{"spec":{"selector":{"app": "blue"}}}'
                    fi                    
