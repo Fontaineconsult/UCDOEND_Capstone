@@ -86,7 +86,7 @@ pipeline {
                     
                     if [ "$deployment" == "blue" ]
                     then
-                       docker build -t capstone-green .
+                       docker build -t capstone-green:$BUILD_NUMBER .
                        id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                        repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-green:$BUILD_NUMBER"
                        docker tag capstone-green:latest $repo
@@ -96,7 +96,7 @@ pipeline {
                          
                    if [ "$deployment" == "green" ]
                     then
-                      docker build -t capstone-blue .
+                      docker build -t capstone-blue:$BUILD_NUMBER .
                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                       repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:$BUILD_NUMBER"
                       docker tag capstone-blue:latest $repo
