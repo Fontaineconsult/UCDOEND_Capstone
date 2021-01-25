@@ -98,6 +98,7 @@ pipeline {
 //                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
 //                sh 'kubectl apply -f ./EKS/deploy-manifest-green.yaml'
 //                sh 'kubectl apply -f ./EKS/service-manifest-blue.yaml'
+                  sh 'kubectl apply -f ./EKS/service-manifest-green.yaml'
             }
 
         }
