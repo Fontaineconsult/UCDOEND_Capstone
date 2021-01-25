@@ -86,7 +86,7 @@ pipeline {
                        docker build -t capstone-green:$BUILD_NUMBER .
                        id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                        repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-green:$BUILD_NUMBER"
-                       docker tag capstone-green:latest $repo
+                       docker tag "capstone-green:$BUILD_NUMBER" $repo
                        docker push $repo
                       
                     fi
@@ -96,7 +96,7 @@ pipeline {
                       docker build -t capstone-blue:$BUILD_NUMBER .
                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
                       repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:$BUILD_NUMBER"
-                      docker tag capstone-blue:latest $repo
+                      docker tag "capstone-blue:$BUILD_NUMBER" $repo
                       docker push $repo
                    fi                    
                     
