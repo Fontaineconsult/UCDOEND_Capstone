@@ -93,7 +93,7 @@ pipeline {
 
 
                   sh 'kubectl get services'
-                  sh 'kubectl kubectl get pods --all-namespace'
+                  sh 'kubectl get pods --all-namespace'
                   sh 'kubectl get pods -o wide'
                   sh 'kubectl get deployments'
                   sh 'kubectl get services'
