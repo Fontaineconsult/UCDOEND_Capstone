@@ -79,13 +79,15 @@ pipeline {
 
             steps {
                 sh '''
+                    
                     deployment=$(kubectl get service capstone-app -o=jsonpath={.spec.selector.app})
                     
                     if [ "$deployment" == "blue" ]
                     then
                        docker build -t capstone-green:$BUILD_NUMBER .
                        id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
-                       repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-green:$BUILD_NUMBER"
+                       repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:$BUILD_NUMBER"
+                       aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
                        docker tag "capstone-green:$BUILD_NUMBER" $repo
                        docker push $repo
                       
@@ -95,7 +97,8 @@ pipeline {
                     then
                       docker build -t capstone-blue:$BUILD_NUMBER .
                       id=$(docker images -q | awk '{print $1}' | awk 'NR==2')
-                      repo="$id.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:$BUILD_NUMBER"
+                      repo="354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:$BUILD_NUMBER"
+                       aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
                       docker tag "capstone-blue:$BUILD_NUMBER" $repo
                       docker push $repo
                    fi                    
