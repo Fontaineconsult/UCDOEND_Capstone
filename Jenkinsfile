@@ -92,7 +92,7 @@ pipeline {
             steps {
 
 
-                  sh 'kubectl get service capstone-app -o yaml'
+                  sh 'kubectl explain pods'
 
 //                sh 'eksctl create cluster -f ./EKS/clusterconfig_create_eksctl.yaml'
 //                sh 'kubectl apply -f ./EKS/deploy-manifest-blue.yaml'
