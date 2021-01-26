@@ -91,7 +91,7 @@ pipeline {
                        docker tag capstone-green:latest $repo
                        docker push $repo
                        kubectl set image deployment/capstone-green capstone-green=354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:latest
-                      
+                      kubectl rollout restart deployment/capstone-green
                     fi
                          
                    if [ "$deployment" == "green" ]
@@ -103,7 +103,7 @@ pipeline {
                       docker tag capstone-blue:latest $repo
                       docker push $repo
                       kubectl set image deployment/capstone-blue capstone-blue=354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:latest
-                      
+                      kubectl rollout restart deployment/capstone-blue
                    fi                    
                     
                     '''
