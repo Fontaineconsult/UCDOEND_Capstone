@@ -40,4 +40,4 @@ CORS(app, expose_headers='Content-Disposition') ##! Disable for production
 
 @app.route('/')
 def index():
-    return 'This is a new style update! ZIINNGGGGGGGGGGGGGG Yay'
+    return 'What the hekkin is happen'
