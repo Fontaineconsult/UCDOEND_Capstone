@@ -90,6 +90,7 @@ pipeline {
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
                        docker tag capstone-green:latest $repo
                        docker push $repo
+                       kubectl set image capstone-green/green app-container=354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-green:latest
                       
                     fi
                          
@@ -101,6 +102,7 @@ pipeline {
                        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 354922583670.dkr.ecr.us-west-2.amazonaws.com
                       docker tag capstone-blue:latest $repo
                       docker push $repo
+                      kubectl set image capstone-blue/blue app-container=354922583670.dkr.ecr.us-west-2.amazonaws.com/capstone-blue:latest
                       
                    fi                    
                     
