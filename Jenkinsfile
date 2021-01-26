@@ -134,15 +134,15 @@ pipeline {
             }
 
         }
-        stage('Clean Up') {
-
-            steps {
-
-                sh "Echo Cleanup"
-
-            }
-
-        }
+//        stage('Clean Up') {
+//
+//            steps {
+//
+//                sh "echo Cleanup"
+//
+//            }
+//
+//        }
     }
 
 
