@@ -9,5 +9,5 @@
 
     - name: "Create Cluster"
       shell: |
-        eksctl create cluster --name capstone-cluster-1 --version <1.18>
+        eksctl create cluster --name capstone-cluster --version <1.18>
 

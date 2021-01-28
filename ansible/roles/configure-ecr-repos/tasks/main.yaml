@@ -1,8 +1,8 @@
 ---
 
 - name: "Configure ECR Repos"
-  hosts: localhost
-  user: daniel
+  hosts: web
+  user: jenkins
 
 
   tasks:
