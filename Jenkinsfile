@@ -8,23 +8,35 @@ pipeline {
 
     }
 
-    agent any
-
-
+    agent none
     stages {
 
 
         stage('Install Python Dependence') {
-
+            agent {
+                docker {
+                    image 'python:3.7.3-stretch'
+                    args '-u root:root'
+                }
+            }
             steps {
-
-                sh 'pip3 install -r requirements.txt'
-                sh 'pip3 install astroid==2.4.2'
+                sh 'pip install --upgrade pip'
+                sh '''#!/bin/bash
+                 pip install pylint
+                '''
+                sh 'apt-get update'
+                sh 'pip install -r requirements.txt'
+                sh 'pip install astroid==2.4.2'
             }
 
         }
         stage('Lint Python Backend') {
-
+            agent {
+                docker {
+                    image 'python:3.7.3-stretch'
+                    args '-u root:root'
+                }
+            }
             steps {
                 sh 'pylint --disable=R,C,W1203 file_to_lint.py'
 
@@ -34,7 +46,7 @@ pipeline {
 
         stage('Lint Node Frontend') {
 
-
+            agent any
             steps {
                 sh "echo Implement Lint Node Lint"
 
@@ -42,21 +54,14 @@ pipeline {
 
         }
         stage('Build Node') {
-
+            agent any
             steps {
                 sh "echo Build Frontend"
 
             }
         }
         stage('Lint Node') {
-
-            agent {
-                docker {
-                    image 'python:3.7.3-stretch'
-                    args '-u root:root'
-                }
-
-            }
+            agent any
             steps {
                 sh "echo needs to be linted"
 
