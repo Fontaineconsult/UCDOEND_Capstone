@@ -1,0 +1,26 @@
+---
+- name: "Configure EKS Cluster"
+  hosts: web
+  user: jenkins
+  gather_facts: true
+
+    - name: "Set Cluster"
+      shell: |
+        api = $(aws eks describe-cluster --name capstone-cluster-1 --query 'cluster.endpoint' --output text)
+        kubectl config --kubeconfig=cap3 set-cluster cap3 --server=$api --certificate-authority=cap3.key
+
+    - name: "Deploy Blue"
+      shell: |
+        kubectl apply -f ../files/deploy-manifest-blue.yaml
+
+    - name: "Deploy Green"
+      shell: |
+        kubectl apply -f ../files/deploy-manifest-green.yaml
+
+    - name: "Serve Blue"
+      shell: |
+        kubectl apply -f ../files/service-manifest-blue.yaml
+
+    - name: "Serve Green"
+      shell: |
+        kubectl apply -f ../files/service-manifest-green.yaml

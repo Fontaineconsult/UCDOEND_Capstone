@@ -1,0 +1,13 @@
+---
+
+- name: "Deploy EKS Cluster"
+  hosts: web
+  user: jenkins
+  gather_facts: true
+
+  tasks:
+
+    - name: "Create Cluster"
+      shell: |
+        eksctl create cluster --name capstone-cluster-1 --version <1.18>
+

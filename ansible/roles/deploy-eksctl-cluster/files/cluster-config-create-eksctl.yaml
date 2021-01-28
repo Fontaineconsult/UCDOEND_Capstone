@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: capstone-cluster
+  region: us-west-2
+vpc:
+  subnets:
+    private:
+      us-west-2a:
+        id: subnet-0af448725a6eec94c
+      us-west-2d:
+        id: subnet-01a9705c8da16aa01
+
+nodeGroups:
+  - name: ng-capstone-cluster
+    instanceType: t2.medium
+    desiredCapacity: 1
+    privateNetworking: true
+    ssh:
+      publicKeyPath: ~/.ssh/id_rsa.pub
+

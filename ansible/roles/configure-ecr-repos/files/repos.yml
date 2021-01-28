@@ -1,0 +1,33 @@
+
+Description: >
+  Repos
+Parameters:
+  ID:
+    Description: Unique identifier.
+    Type: String
+    Default: vjlkjselkme33tjlws
+
+Resources:
+  GreenRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "capstone-green-1"
+      Tags:
+        - Key: Name
+          Value: Capstone-Green
+
+  BlueRepo:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "capstone-blue-1"
+      Tags:
+        - Key: Name
+          Value: Capstone-Blue
+
+Outputs:
+  GreenRepo:
+    Description: Green URI
+    Value: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/capstone-green-1"
+  BlueRepo:
+    Description: Blue URI
+    Value: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/capstone-blue-1"

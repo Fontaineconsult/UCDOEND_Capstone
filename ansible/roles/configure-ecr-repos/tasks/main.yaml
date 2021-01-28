@@ -1,0 +1,12 @@
+---
+
+- name: "Configure ECR Repos"
+  hosts: localhost
+  user: daniel
+
+
+  tasks:
+
+    - name: "Deploy Repos"
+      shell: |
+        aws cloudformation create-stack --stack-name blue-green-repos --template-body=file://../files/repos.yml  --region=us-west-2 --capabilities CAPABILITY_NAMED_IAM

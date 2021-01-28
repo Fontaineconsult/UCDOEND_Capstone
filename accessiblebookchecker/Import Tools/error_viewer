@@ -1,4 +1,0 @@
-with open(r"C:\Users\913678186\Box Sync\SF State Python Projects\Accessible Book Researcher\Import Tools\test.txt", "r", encoding='ASCII') as error:
-	lines = error.readline()
-
-	print(lines)

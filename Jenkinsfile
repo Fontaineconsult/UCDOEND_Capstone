@@ -2,68 +2,72 @@
 def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
                        credentialsId: '88651025-f487-48f4-8324-6cff583725ec']]
 
+pipeline {
 
 
+    agent {
+        docker {
+            image 'python:3.7.3-stretch'
+            args '-u root:root'
+        }
 
-//pipeline {
-//
-//
-//    agent {
-//        docker {
-//            image 'python:3.7.3-stretch'
-//            args '-u root:root'
-//        }
-//
-//    }
-//    stages {
-//
-//
-//        stage('install') {
-//
-//            steps {
-//                sh 'ls'
-//                sh 'pip install --upgrade pip'
-//                sh '''#!/bin/bash
-//                 pip install pylint
-//                '''
-//                sh 'apt-get update'
-//
-//
-//
-////                sh 'pip install -r requirements.txt'
-////                sh 'pip install astroid==2.4.2'
-//            }
-//
-//        }
-//        stage('lint') {
-//
-//
-//            steps {
-//                echo 'needs to be linted'
-//
-//            }
-//
-//        }
-//        stage('test') {
-//
-//            steps {
-//                echo 'lint step   STERG'
-//
-//            }
-//
-//        }
-//
-//
-//
-//
-//
-//
-//
-//
-//    }
-//
-//
-//}
+    }
+    stages {
+
+
+        stage('Install Python Dependence') {
+
+            steps {
+                sh 'ls'
+                sh 'pip install --upgrade pip'
+                sh '''#!/bin/bash
+                 pip install pylint
+                '''
+                sh 'apt-get update'
+
+                sh 'pip install -r requirements.txt'
+                sh 'pip install astroid==2.4.2'
+            }
+
+        }
+        stage('Lint Python Backend') {
+
+            steps {
+                sh 'pylint --disable=R,C,W1203 file_to_lint.py'
+
+            }
+
+        }
+        stage('Lint Node Frontend') {
+
+
+            steps {
+                echo 'Implement Lint Node Lint'
+
+            }
+
+        }
+        stage('Build Node') {
+
+            steps {
+                echo 'Build Frontend'
+
+            }
+        }
+
+        stage('Lint Node') {
+
+
+            steps {
+                echo 'needs to be linted'
+
+            }
+
+        }
+
+    }
+
+}
 
 pipeline {
 
@@ -134,15 +138,23 @@ pipeline {
             }
 
         }
-//        stage('Clean Up') {
-//
-//            steps {
-//
-//                sh "echo Cleanup"
-//
-//            }
-//
-//        }
+        stage('Clean Up') {
+
+            steps {
+
+                sh '''
+                IMAGES_TO_DELETE=$( aws ecr list-images --region us-west-2 --repository-name capstone-blue --filter "tagStatus=UNTAGGED" --query 'imageIds[*]' --output json )
+                aws ecr batch-delete-image --region us-west-2 --repository-name $ECR_REPO --image-ids "$IMAGES_TO_DELETE" || true
+             
+                IMAGES_TO_DELETE=$( aws ecr list-images --region us-west-2 --repository-name capstone-green --filter "tagStatus=UNTAGGED" --query 'imageIds[*]' --output json )
+                aws ecr batch-delete-image --region us-west-2 --repository-name $ECR_REPO --image-ids "$IMAGES_TO_DELETE" || true       
+                    '''
+
+
+
+            }
+
+        }
     }
 
 

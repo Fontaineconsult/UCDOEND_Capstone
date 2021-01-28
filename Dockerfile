@@ -24,8 +24,8 @@ RUN pip3 install psycopg2-binary
 
 RUN pip3 install --trusted-host pypi.python.org -r  requirements.txt
 
-COPY  capstone.conf /etc/apache2/sites-available
-COPY  capstone.wsgi /var/www/capstone
+COPY  apache/capstone.conf /etc/apache2/sites-available
+COPY  apache/capstone.wsgi /var/www/capstone
 
 
 RUN a2ensite capstone.conf
@@ -35,9 +35,5 @@ RUN echo "y" | pip uninstall toastedmarshmallow==2.15.2.post1
 RUN pip install toastedmarshmallow==2.15.2.post1
 
 
-## Step 4:
+
 EXPOSE 80
-
-## Step 5:
-
-

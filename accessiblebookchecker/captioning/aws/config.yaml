@@ -1,6 +1,0 @@
-access_key_ID: "AKIATVWJFSM5S5NVQJXE"
-secret_access_key: "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"
-s3_service_url: "https://amp-video-storage.s3-us-west-2.amazonaws.com"
-s3_video_storage_bucket: "amp-video-storage"
-s3_storage_folder: "video-storage"
-
