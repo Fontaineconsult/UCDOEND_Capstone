@@ -1,0 +1,6 @@
+
+ppython:S116"TRename this field "CapJobVideos" to match the regular expression ^[_a-z][_a-z0-9]*$.(öâ¢§øÿÿÿÿ
+jpython:S116"TRename this field "IlearnVideos" to match the regular expression ^[_a-z][_a-z0-9]*$.(Ð¡Ú
+@python:S108'")Either remove or fill this block of code.(ã‘Û¾
+rpython:S117-"[Rename this local variable "objectType" to match the regular expression ^[_a-z][a-z0-9_]*$.(“ž’Ä
+Kpython:S5727é"2Remove this == comparison; it will always be True.(¯±À«

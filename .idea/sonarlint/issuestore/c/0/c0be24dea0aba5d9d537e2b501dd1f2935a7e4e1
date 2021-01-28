@@ -1,0 +1,5 @@
+
+wpython:S117"[Rename this local variable "CustomerID" to match the regular expression ^[_a-z][a-z0-9_]*$.(áÚæšþÿÿÿÿ
+upython:S117	"_Rename this local variable "CustomerSecret" to match the regular expression ^[_a-z][a-z0-9_]*$.(¬¢ëV
+spython:S117"\Rename this local variable "PartnerType" to match the regular expression ^[_a-z][a-z0-9_]*$.(¾ÿ‹ê
+xpython:S1186X"[Add a nested comment explaining why this function is empty, or complete the implementation.(ÄØ¶åÿÿÿÿÿ

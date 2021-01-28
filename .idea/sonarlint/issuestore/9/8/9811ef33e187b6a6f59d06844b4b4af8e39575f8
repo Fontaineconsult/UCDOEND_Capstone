@@ -1,0 +1,5 @@
+
+ƒpython:S101
+"gRename class "iLearn_Course" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(¨ú¤ þÿÿÿÿ
+‚python:S101""fRename class "iLearn_Video" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(ëðãˆþÿÿÿÿ
+ppython:S117H"ZRename this local variable "DBsession" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö„¥.

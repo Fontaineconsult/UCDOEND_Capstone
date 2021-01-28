@@ -1,0 +1,5 @@
+
+mpython:S1192"UDefine a constant instead of duplicating this literal "course.course_gen_id" 3 times.(πέ™“
+python:S101,"qRename class "myDPRCStudentEnrollemet" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(—¶ΰϊÿÿÿÿ
+„python:S1015"mRename class "myDPRCRawCourseList" to match the regular expression ^_?([A-Z_][a-zA-Z0-9]*|[a-z_][a-z0-9_]*)$.(ΌϋΡ
+qpython:S117ÿ"ZRename this local variable "DBsession" to match the regular expression ^[_a-z][a-z0-9_]*$.(Φ„¥.

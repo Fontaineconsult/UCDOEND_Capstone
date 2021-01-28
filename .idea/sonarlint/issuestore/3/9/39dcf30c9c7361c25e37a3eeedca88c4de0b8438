@@ -1,0 +1,5 @@
+
+ipython:S116"RRename this field "S3Uploader" to match the regular expression ^[_a-z][_a-z0-9]*$.(óÕÖ÷
+gpython:S1000"PRename method "upload_to_S3" to match the regular expression ^[a-z_][a-z0-9_]*$.(ë´‹“
+epython:S100<"NRename method "create_SRT" to match the regular expression ^[a-z_][a-z0-9_]*$.(úÍ°œ
+ppython:S3923 "RRemove this if statement or edit its code blocks so that they're not all the same.(ÕÚ±Ãúÿÿÿÿ

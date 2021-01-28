@@ -1,0 +1,10 @@
+
+_python:S1763N"GDelete this unreachable code or refactor the code to make it reachable.(„ë€æ
+4python:S2772N"Remove this unneeded "pass".(„ë€æ
+@python:S108P")Either remove or fill this block of code.(„ë€æ
+@python:S108\")Either remove or fill this block of code.(„ë€æ
+@python:S108_")Either remove or fill this block of code.(„ë€æ
+Apython:S108Å")Either remove or fill this block of code.(„ë€æ
+Apython:S108Ω")Either remove or fill this block of code.(„ë€æ
+Apython:S108“")Either remove or fill this block of code.(„ë€æ
+Apython:S108‘")Either remove or fill this block of code.(„ë€æ
