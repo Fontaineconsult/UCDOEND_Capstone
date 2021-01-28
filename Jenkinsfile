@@ -5,13 +5,9 @@ def awsCredentials = [[$class: 'AmazonWebServicesCredentialsBinding',
 pipeline {
     environment {
         AWS_REGION = 'us-west-2'
-
     }
-
     agent none
     stages {
-
-
         stage('Lint Python Backend') {
             agent {
                 docker {
