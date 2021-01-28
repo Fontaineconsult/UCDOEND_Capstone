@@ -38,6 +38,7 @@ CORS(app, expose_headers='Content-Disposition') ##! Disable for production
 # app.register_blueprint(page_routes)
 
 
+
 @app.route('/')
 def index():
     return "UDACITY CAPSTONE BLUE DEPLOYMENT"
