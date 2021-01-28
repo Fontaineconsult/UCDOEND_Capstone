@@ -18,8 +18,8 @@ pipeline {
 
             steps {
 
-                sh 'pip install -r requirements.txt'
-                sh 'pip install astroid==2.4.2'
+                sh 'pip3 install -r requirements.txt'
+                sh 'pip3 install astroid==2.4.2'
             }
 
         }
