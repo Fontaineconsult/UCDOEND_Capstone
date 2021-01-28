@@ -40,4 +40,4 @@ CORS(app, expose_headers='Content-Disposition') ##! Disable for production
 
 @app.route('/')
 def index():
-    return 'What the hekkin is happen'
+    return "This is a super good cool test!!!!!"
