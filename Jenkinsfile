@@ -117,6 +117,7 @@ pipeline {
             agent any
             steps {
 
+
                 sh '''
                 IMAGES_TO_DELETE=$( aws ecr list-images --region us-west-2 --repository-name capstone-blue --filter "tagStatus=UNTAGGED" --query 'imageIds[*]' --output json )
                 aws ecr batch-delete-image --region us-west-2 --repository-name $ECR_REPO --image-ids "$IMAGES_TO_DELETE" || true
