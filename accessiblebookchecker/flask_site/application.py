@@ -40,8 +40,6 @@ CORS(app, expose_headers='Content-Disposition') ##! Disable for production
 
 @app.route('/')
 def index():
-    return "One more test for good measure UDACITY CAPSTONE"
+    return "UDACITY CAPSTONE BLUE DEPLOYMENT"
 
-def lintfailure
-    print("THIS FAILES")
 
