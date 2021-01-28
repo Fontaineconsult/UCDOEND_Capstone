@@ -42,7 +42,7 @@ pipeline {
 
 
             steps {
-                echo 'Implement Lint Node Lint'
+                sh "echo Implement Lint Node Lint"
 
             }
 
@@ -50,7 +50,7 @@ pipeline {
         stage('Build Node') {
 
             steps {
-                echo 'Build Frontend'
+                sh "echo Build Frontend"
 
             }
         }
@@ -59,7 +59,7 @@ pipeline {
 
 
             steps {
-                echo 'needs to be linted'
+                sh "echo needs to be linted"
 
             }
 
