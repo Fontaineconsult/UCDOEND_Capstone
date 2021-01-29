@@ -19,3 +19,5 @@ spec:
           command: ["apachectl", "-D", "FOREGROUND"]
           ports:
             - containerPort: 80
+      nodeSelector:
+        nodegroup-name: ng-capstone-green

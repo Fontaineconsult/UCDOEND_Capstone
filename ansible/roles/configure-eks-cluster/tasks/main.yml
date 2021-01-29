@@ -20,7 +20,3 @@
     - name: "Serve Blue"
       shell: |
         kubectl apply -f ../files/service-manifest-blue.yaml
-
-    - name: "Serve Green"
-      shell: |
-        kubectl apply -f ../files/service-manifest-green.yaml
