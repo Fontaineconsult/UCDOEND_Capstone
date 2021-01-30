@@ -41,6 +41,6 @@ CORS(app, expose_headers='Content-Disposition') ##! Disable for production
 
 @app.route('/')
 def index():
-    return "UDACITY CAPSTONE BLUE DEPLOYMENT  !!!!!"
+    return "NEW STYLE SUPER DEPLOYMENT"
 
 

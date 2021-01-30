@@ -20,7 +20,7 @@ nodeGroups:
     desiredCapacity: 1
     privateNetworking: true
     labels:
-      - app: green
+      - app: blue
     tags:
       - application: blue
     ssh:
