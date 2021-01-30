@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: capstone-green
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -20,4 +19,4 @@ spec:
           ports:
             - containerPort: 80
       nodeSelector:
-        nodegroup-name: ng-capstone-green
+        app: green

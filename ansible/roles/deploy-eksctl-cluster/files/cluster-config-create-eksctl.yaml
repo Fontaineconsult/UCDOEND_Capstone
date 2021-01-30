@@ -3,6 +3,7 @@ kind: ClusterConfig
 metadata:
   name: capstone-cluster-blue-green
   region: us-west-2
+
 vpc:
   subnets:
     private:
@@ -14,15 +15,27 @@ vpc:
 nodeGroups:
   - name: ng-capstone-blue
     instanceType: t2.medium
+    minSize: 0
+    maxSize: 1
     desiredCapacity: 1
     privateNetworking: true
+    labels:
+      - app: green
+    tags:
+      - application: blue
     ssh:
       publicKeyPath: ~/.ssh/id_rsa.pub
 
   - name: ng-capstone-green
     instanceType: t2.medium
+    minSize: 0
+    maxSize: 1
     desiredCapacity: 1
     privateNetworking: true
+    labels:
+      - app: green
+    tags:
+      - application: green
     ssh:
       publicKeyPath: ~/.ssh/id_rsa.pub
 
